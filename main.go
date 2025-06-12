@@ -15,7 +15,10 @@ type server struct {
 	pb.UnimplementedCoffeeShopServer
 }
 
-func (s *server) GetMenu(mr *pb.MenuRequest, streamSrv grpc.ServerStreamingServer[pb.Menu]) error {
+func (s *server) GetMenu(
+	mr *pb.MenuRequest,
+	streamSrv grpc.ServerStreamingServer[pb.Menu],
+) error {
 	log.Print("GOT HIT")
 	items := []*pb.Item{
 		{Id: "1", Name: "Black Coffee"},

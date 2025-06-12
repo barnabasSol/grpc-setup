@@ -13,6 +13,7 @@ import (
 )
 
 func RunClient() {
+	time.Sleep(3 * time.Second)
 	conn, err := grpc.NewClient(
 		"localhost:5001",
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
